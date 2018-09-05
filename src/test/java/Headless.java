@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 
 public class Headless {
-
-	public static void main(String[] args) {
+     @Test
+	public  void headlesslogin() {
 	//	HtmlUnitDriver driver = new HtmlUnitDriver();
 		ChromeOptions option = new ChromeOptions();
 	//	option.addArguments("window-size=1400,800");
