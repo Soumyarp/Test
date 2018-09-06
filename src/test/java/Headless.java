@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class Headless {
      @Test
-	public  void headlesslogin() {
+	public  void headlesslogin() throws InterruptedException {
 	//	HtmlUnitDriver driver = new HtmlUnitDriver();
 		ChromeOptions option = new ChromeOptions();
 	//	option.addArguments("window-size=1400,800");
@@ -19,7 +19,7 @@ public class Headless {
 			
 	//driver.get("https://qa-org.securtime.in");
 		driver.get("https://securax.securtime.in");
-	System.out.println(driver.getTitle());
+	System.out.println(driver.getTitle()+"---------"+driver.getCurrentUrl());
 	driver.findElement(By.xpath("//input[@type='email']")).clear();
 	driver.findElement(By.xpath("//input[@type='email']")).sendKeys("ranjan@securax.in");
 	
@@ -27,6 +27,8 @@ public class Headless {
 	driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Securax@123");
 	
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
+	 
+	Thread.sleep(2000);
 	
 	System.out.println(driver.getTitle()+"-------"+driver.getCurrentUrl());
 //	System.out.println(driver.getCurrentUrl());
